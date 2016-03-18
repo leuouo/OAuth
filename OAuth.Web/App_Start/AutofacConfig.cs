@@ -32,7 +32,6 @@ namespace OAuth.Web
             builder.RegisterSource(new ViewRegistrationSource());
 
 
-
             // Register our Data dependencies
             builder.RegisterModule(new DataModule(ConnectionStringEncrypt()));
             //builder.RegisterModule(new DataModule("OAuthConnectionString"));
