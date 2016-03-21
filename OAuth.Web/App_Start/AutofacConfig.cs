@@ -33,8 +33,8 @@ namespace OAuth.Web
 
 
             // Register our Data dependencies
-            builder.RegisterModule(new DataModule(ConnectionStringEncrypt()));
-            //builder.RegisterModule(new DataModule("OAuthConnectionString"));
+            //builder.RegisterModule(new DataModule(ConnectionStringEncrypt()));
+            builder.RegisterModule(new DataModule("OAuthConnectionString"));
 
 
             builder.RegisterModule(new ServiceModule());
@@ -53,10 +53,9 @@ namespace OAuth.Web
         private static string ConnectionStringEncrypt()
         {
             string connString = ConfigurationManager.ConnectionStrings["OAuthConnectionString"].ConnectionString;
-            //string strEncryptConn = "";
-            //AESEDSVcrypts.AES_Decrypt(connString, out strEncryptConn);
-            //return strEncryptConn;
-            return connString;
+            string strEncryptConn = "";
+            AESEDSVcrypts.AES_Decrypt(connString, out strEncryptConn);
+            return strEncryptConn;
         }
 
 
