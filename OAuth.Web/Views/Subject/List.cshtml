@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mod-navbar">
+    <div class="main-header">
+        <div class="title">
+            <h3>
+                <a href="javascript:;"><i class="icon icon-list"></i></a>
+                <a href="javascript:;">列表</a>
+            </h3>
+        </div>
+    </div>
+    <div class="sub">
+        <div class="sub_toolbar">
+            <button class="btn btn-success btn-fancy btn-sm" onclick="uv.js_user_add(this)"><i class="glyphicon glyphicon-plus"></i> 创建用户</button>
+        </div>
+    </div>
+</div>
+<div class="navigator-results mCustomScrollbar" data-mcs-theme="dark">
+    <div class="frame">
+        <div class="frame-header">
+            <span class="title-breadcrumb">
+                <a href="javascript:;">列表</a>
+            </span>
+        </div>
+        <hr class="m0" />
+        <div class="widget widget-mytask">
+            <div class="body">
+                <div class="line-item-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

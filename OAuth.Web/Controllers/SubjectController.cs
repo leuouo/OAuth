@@ -9,20 +9,27 @@ using Webdiyer.WebControls.Mvc;
 
 namespace OAuth.Web.Controllers
 {
-    public class SubjectController : Controller
+    public class SubjectController : BaseController
     {
-        private readonly IItemService itemService;
+        private readonly IItemService _itemService;
 
         public SubjectController(IItemService itemService)
         {
-            this.itemService = itemService;
+            this._itemService = itemService;
         }
+
         // GET: Subject
         public ActionResult Index(int id = 1)
         {
-            var pageList = itemService.GetItems(id);
+            var pageList = _itemService.GetItems(id);
 
             return View(new PagedList<Item>(pageList, pageList.CurrentPageIndex, pageList.PageSize, pageList.TotalItemCount));
+        }
+
+
+        public ActionResult List()
+        {
+            return View();
         }
     }
 }
