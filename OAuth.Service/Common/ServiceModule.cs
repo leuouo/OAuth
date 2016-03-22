@@ -18,6 +18,9 @@ namespace OAuth.Service.Common
             builder.RegisterType<ProjectService>().As<IProjectService>().InstancePerRequest();
             builder.RegisterType<RoleService>().As<IRoleService>().InstancePerRequest();
 
+            builder.RegisterType<ItemService>().As<IItemService>().InstancePerRequest();
+
+
             //UI项目只用引用OAuth.Service
             //如需加载实现的程序集
             //var Services = Assembly.Load("OAuth.Service");

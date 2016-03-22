@@ -1342,6 +1342,7 @@
     <Content Include="Views\Project\ProjectDropdownMenu.cshtml" />
     <Content Include="Views\Home\TestSqlQuery.cshtml" />
     <Content Include="Views\Subject\Index.cshtml" />
+    <Content Include="Views\Subject\List.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
