@@ -30,7 +30,7 @@ namespace OAuth.Data.Mapping
             Property(t => t.Memo).HasColumnName("Memo_nvarchar");
 
             //关系一对多，一个用户可拥有多个角色
-            HasMany<Item>(u => u.Items).WithRequired();
+            //HasMany<Item>(u => u.Items).WithRequired();
         }
     }
 }

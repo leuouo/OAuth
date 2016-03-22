@@ -36,7 +36,8 @@ namespace OAuth.Service
         {
             var pageList = _repo.GetAll<Item>()//.Include(u => u.UserRoles.Select(r => r.Role))
                 //.Where(u => u.Status == 1)
-                .OrderBy(u => u.Id)
+                .OrderByDescending(u=>u.Id)
+                //.OrderBy(u => u.Id)
                 .ToPagedList(pageIndex, 10);
             return pageList;
         }

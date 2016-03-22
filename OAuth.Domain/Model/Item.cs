@@ -8,7 +8,6 @@ namespace OAuth.Domain.Model
 {
     public class Item : AggregateRoot
     {
-        public int ID { get; set; }
 
         public string ItemName { get; set; }
 
@@ -30,6 +29,6 @@ namespace OAuth.Domain.Model
 
         public string Memo { get; set; }
 
-        public virtual ICollection<Item> Items { get; set; }
+        //public virtual ICollection<Item> Items { get; set; }
     }
 }
