@@ -57,6 +57,9 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -1343,6 +1346,10 @@
     <Content Include="Views\Home\TestSqlQuery.cshtml" />
     <Content Include="Views\Subject\Index.cshtml" />
     <Content Include="Views\Subject\List.cshtml" />
+    <Content Include="Views\Subject\Supplier.cshtml" />
+    <Content Include="Views\Subject\Step1.cshtml" />
+    <Content Include="Views\Subject\Step2.cshtml" />
+    <Content Include="Views\Subject\Step3.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
