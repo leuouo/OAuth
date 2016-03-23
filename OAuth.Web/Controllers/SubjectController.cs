@@ -36,6 +36,20 @@ namespace OAuth.Web.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Step1(Item item)
+        {
+            item.ItemMode = 1;
+            item.InputPerson = 1;
+            item.ItemNo = "1";
+            item.File1 = "1";
+            item.File2 = "1";
+            item.InputTime = DateTime.Now;
+            _itemService.Add(item);
+            return Json(new { code = 200, message = "竞价工程发布成功！" });
+        }
+
         public ActionResult Step2()
         {
             return View();
