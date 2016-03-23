@@ -507,3 +507,16 @@ div.frame .frame-body .line-item-container{}
 .entry-well-content li.active:before {position:absolute;left:5px;z-index:2; font-family: "iconfont" !important;font-style: normal; content: "\e645";font-weight:700;color:#fff; }
 .entry-well-content li.active a.item-label{background-color:#59b2e0;border:1px solid #59b2e0;}
 .entry-part-content .no-role{color:#92a0a9;}
+
+
+.ui-step-inner {width:93%; margin: 0 auto;}
+.ui-step{ width: 100%;padding-left:0;overflow: hidden;zoom: 1;}
+.ui-step li{width:30%;height:40px;line-height:40px; background-color:#eee;display: table;
+    content: " ";
+    float: left;
+    text-align: center;}
+.ui-step li.active{background-color:#a8e0fe;}
+
+.ui-step li i{ font-style: normal;font-weight: 700;color:#fff; padding:5px 9px;margin-right:5px; background-color:#d3d3d3;}
+.ui-step li.active i{background-color:#368ee0;}
+

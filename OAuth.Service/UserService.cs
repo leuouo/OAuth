@@ -66,6 +66,8 @@ namespace OAuth.Service
             }
             entity.Status = 1;
             entity.AddDate = DateTime.Now;
+            entity.Email = entity.Email;
+            entity.UserFlag = UserFlag.Buyer;
 
             //使用UnitOfWork方式
             _unitOfWork.RegisterNew(entity);
@@ -101,6 +103,8 @@ namespace OAuth.Service
             entity.UserName = user.UserName;
             entity.FullName = user.FullName;
             entity.PhoneNumber = user.PhoneNumber;
+            entity.Email = user.Email;
+            entity.UserFlag = user.UserFlag;
 
             _unitOfWork.RegisterDirty(entity);
             _unitOfWork.Commit();
@@ -243,6 +247,16 @@ namespace OAuth.Service
                 _unitOfWork.RegisterNew(entity);
             }
             _unitOfWork.Commit();
+        }
+
+
+        public IPagedList<User> GetSupplierList(int pageIndex)
+        {
+            var pageList = _repo.GetAll<User>()
+                .Where(u => u.Status == 1)
+                .OrderBy(u => u.Id)
+                .ToPagedList(pageIndex, 10);
+            return pageList;
         }
     }
 }

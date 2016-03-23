@@ -1,4 +1,6 @@
 ﻿
+using OAuth.Domain.Model;
+
 namespace OAuth.Service.ModelDto
 {
     public class UserDto
@@ -10,6 +12,8 @@ namespace OAuth.Service.ModelDto
         public string FullName { get; set; }
 
         public string Email { get; set; }
+
+        public UserFlag UserFlag { get; set; }
 
         public string PhoneNumber { get; set; }
 

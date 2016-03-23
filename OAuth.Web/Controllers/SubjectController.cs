@@ -26,8 +26,22 @@ namespace OAuth.Web.Controllers
             return View(new PagedList<Item>(pageList, pageList.CurrentPageIndex, pageList.PageSize, pageList.TotalItemCount));
         }
 
+        public ActionResult Supplier()
+        {
+            return View();
+        }
 
-        public ActionResult List()
+        public ActionResult Step1()
+        {
+            return View();
+        }
+
+        public ActionResult Step2()
+        {
+            return View();
+        }
+
+        public ActionResult Step3()
         {
             return View();
         }
