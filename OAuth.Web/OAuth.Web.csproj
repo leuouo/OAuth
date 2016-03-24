@@ -1237,6 +1237,7 @@
     <Content Include="assets\js\ie-emulation-modes-warning.js" />
     <Content Include="assets\js\ie10-viewport-bug-workaround.js" />
     <Content Include="assets\js\init-chart.js" />
+    <Content Include="assets\js\item.js" />
     <Content Include="assets\js\jquery-1.10.2.js" />
     <Content Include="assets\js\jquery-1.10.2.min.js" />
     <Content Include="assets\js\jquery.autogrow-textarea.js" />
@@ -1348,8 +1349,12 @@
     <Content Include="Views\Subject\List.cshtml" />
     <Content Include="Views\Subject\Supplier.cshtml" />
     <Content Include="Views\Subject\Step1.cshtml" />
-    <Content Include="Views\Subject\Step2.cshtml" />
     <Content Include="Views\Subject\Step3.cshtml" />
+    <Content Include="Views\Subject\Step2_1.cshtml" />
+    <Content Include="Views\Subject\Step2_2.cshtml" />
+    <Content Include="Views\Subject\Step2_3.cshtml" />
+    <Content Include="Views\Subject\Step2_4.cshtml" />
+    <Content Include="Views\Subject\Step2_5.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
