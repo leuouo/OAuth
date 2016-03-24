@@ -1349,8 +1349,12 @@
     <Content Include="Views\Subject\List.cshtml" />
     <Content Include="Views\Subject\Supplier.cshtml" />
     <Content Include="Views\Subject\Step1.cshtml" />
-    <Content Include="Views\Subject\Step2.cshtml" />
     <Content Include="Views\Subject\Step3.cshtml" />
+    <Content Include="Views\Subject\Step2_1.cshtml" />
+    <Content Include="Views\Subject\Step2_2.cshtml" />
+    <Content Include="Views\Subject\Step2_3.cshtml" />
+    <Content Include="Views\Subject\Step2_4.cshtml" />
+    <Content Include="Views\Subject\Step2_5.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

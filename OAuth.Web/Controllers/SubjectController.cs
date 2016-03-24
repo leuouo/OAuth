@@ -50,7 +50,27 @@ namespace OAuth.Web.Controllers
             return Json(new { code = 200, message = "竞价工程发布成功！" });
         }
 
-        public ActionResult Step2()
+        public ActionResult Step2_1()
+        {
+            return View();
+        }
+
+        public ActionResult Step2_2()
+        {
+            return View();
+        }
+
+        public ActionResult Step2_3()
+        {
+            return View();
+        }
+
+        public ActionResult Step2_4()
+        {
+            return View();
+        }
+
+        public ActionResult Step2_5()
         {
             return View();
         }

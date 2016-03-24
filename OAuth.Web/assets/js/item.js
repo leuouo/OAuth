@@ -33,7 +33,7 @@
                             //_dialog.modal.close();
                             //that.noty(data.message, "information");
                             alert(data.message);
-                            window.location.href = "/Subject/Step2";
+                            window.location.href = "/Subject/Step2_1";
 
                         }
                     },
