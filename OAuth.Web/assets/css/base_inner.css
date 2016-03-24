@@ -509,7 +509,7 @@ div.frame .frame-body .line-item-container{}
 .entry-part-content .no-role{color:#92a0a9;}
 
 
-.ui-step-inner {width:93%; margin: 0 auto;}
+.ui-step-inner {width:93%; margin: 30px auto;}
 .ui-step{ width: 100%;padding-left:0;overflow: hidden;zoom: 1;}
 .ui-step li{width:30%;height:40px;line-height:40px; background-color:#eee;display: table;
     content: " ";
