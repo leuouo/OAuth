@@ -24,7 +24,15 @@ namespace OAuth.Service
 
         public Item Add(Item item)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(item.ItemName))
+            {
+                throw new ArgumentException("project name is not allowed to be empty");
+            }
+            //使用UnitOfWork方式
+            _unitOfWork.RegisterNew(item);
+            _unitOfWork.Commit();
+
+            return item;
         }
 
         public Item Get(int id)
