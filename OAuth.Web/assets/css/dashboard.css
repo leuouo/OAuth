@@ -154,6 +154,7 @@ h1 {
 }
 
 .navigator-content .navigator-results {
+    white-space: nowrap;
     position:relative;  
     max-height:500px;
     overflow:hidden;
