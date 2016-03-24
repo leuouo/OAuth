@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "型材询价单";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*@model PagedList<Item>*@
+@section Head{<link href="~/assets/bower_components/icheck/skins/minimal/red.css" rel="stylesheet" />}
+<div class="mod-navbar">
+    <div class="main-header">
+        <div class="title">
+            <h3>
+                <a href="javascript:;"><i class="icon icon-list"></i></a>
+                <a href="javascript:;">型材询价单</a>
+            </h3>
+        </div>
+    </div>
+    <div class="sub">
+        <div class="sub_toolbar">
+            <input type="file" class="filestyle" data-icon="false">
+            <input class="btn btn-default" type="submit" value="导入型材询价单">
+        </div>
+    </div>
+</div>
+<div class="navigator-results mCustomScrollbar" data-mcs-theme="dark">
+    <div class="frame">
+        <div class="frame-header">
+            <span class="title-breadcrumb">
+                <a href="javascript:;">型材询价单</a>
+            </span>
+        </div>
+        <hr class="m0" />
+        <div class="widget widget-mytask">
+            <div class="body">
+                <div class="line-item-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>类别</th>
+                                <th>名称</th>
+                                <th>规格</th>
+                                <th>材质</th>
+                                <th>标准</th>
+                                <th>长度(米)</th>
+                                <th>数量(支)</th>
+                                <th>总重(T)</th>
+                                <th>实际到厂单价</th>
+                                <th>到货时间</th>
+                                <th>价格为理计/磅计</th>
+                                <th>是否承兑/现款</th>
+                                <th>货到付款/款到发货/预付款</th>
+                                <th>是否含税</th>
+                                <th>备注</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">型材</th>
+                                <td>直板尺</td>
+                                <td>@@2M/只</td>
+                                <td>塑料</td>
+                                <td>国标</td>
+                                <td>@@2</td>
+                                <td>@@2</td>
+                                <td>@@20</td>
+                                <td>@@200.00</td>
+                                <td>@@2016-03-21</td>
+                                <td>理计</td>
+                                <td>现款</td>
+                                <td>货到付款</td>
+                                <td>含税</td>
+                                <td>测试物料</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-center">
+                        @*@Html.Pager(Model, new PagerOptions { PageIndexParameterName = "id", ContainerTagName = "ul", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>", Id = "bootstrappager" })*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
