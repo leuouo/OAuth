@@ -90,22 +90,29 @@
     <script src="/assets/js/jquery.noty.js"></script>
     <script src="/assets/js/dialog.js"></script>
     <script src="/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script>
-        $(function () {
-            $("#create_project").on("click", function () {
-                $.get("/Project/Add", function (content) {
-                    $.dialog({
-                        content: content,
-                        width: 800,
-                        init: function () {
+<script>
+    
 
-                        },
-                        sure: function () { return false; }
-                    });
+    $(function () {
+        $.mCustomScrollbar.defaults.theme = "minimal-dark";
+        $.mCustomScrollbar.defaults.scrollButtons.enable = true;
+        //$.mCustomScrollbar.defaults.axis = "yx";
+
+        $(".line-item-container").mCustomScrollbar({ axis: "x" });
+        $("#create_project").on("click", function () {
+            $.get("/Project/Add", function (content) {
+                $.dialog({
+                    content: content,
+                    width: 800,
+                    init: function () {
+
+                    },
+                    sure: function () { return false; }
                 });
             });
-        })
-    </script>
+        });
+    })
+</script>
     @RenderSection("Script", required: false)
 </body>
 </html>

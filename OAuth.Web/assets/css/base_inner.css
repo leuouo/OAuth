@@ -477,7 +477,7 @@ ul.checkable li a:hover{color:#da4f4a;}
 .entry-well-content .entity-app li:hover .icon-close{display:block;}
 .entry-well-content .entity-app li.set-project a{color:#357cbc;padding:0;}
 
-div.frame {margin: 14px;padding: 21px;border: solid 1px #f0f0f7;background: #fff;min-height:480px;}
+div.frame {margin: 14px;padding: 21px;border: solid 1px #f0f0f7;background: #fff;min-height:450px;}
 div.frame .frame-header {padding:0 15px 14px 2px;}
 div.frame .frame-header .title-breadcrumb{font-size:15px;line-height:21px;}
 div.frame .frame-header a:hover{color:#da4f4a;}
@@ -509,7 +509,7 @@ div.frame .frame-body .line-item-container{}
 .entry-part-content .no-role{color:#92a0a9;}
 
 
-.ui-step-inner {width:93%; margin: 0 auto;}
+.ui-step-inner {width:93%; margin: 30px auto;}
 .ui-step{ width: 100%;padding-left:0;overflow: hidden;zoom: 1;}
 .ui-step li{width:30%;height:40px;line-height:40px; background-color:#eee;display: table;
     content: " ";

@@ -20,6 +20,12 @@
 </div>
 <div class="navigator-results mCustomScrollbar" data-mcs-theme="dark">
     <div class="frame">
+        <div class="frame-header">
+            <span class="title-breadcrumb">
+                <a href="javascript:;">供应商设置</a>
+            </span>
+        </div>
+        <hr class="m0" />
         <div class="ui-step-inner">
             <ol class="ui-step">
                 <li class="active"><i>1</i>步骤一</li>
@@ -31,7 +37,7 @@
             <div class="body">
                 <form class="form-horizontal aui" id="add_item_form" action="/Item/Step1" method="post">
                     <fieldset>
-                        <div class="row mt30">
+                        <div class="row">
                             <div class="col-lg-5">
                                 <div class="form-group">
                                     <label class="col-md-4 control-label">工程名称</label>
@@ -74,12 +80,10 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-12 col-xs-12">
-
-                                <div class="form-group">
-                                    
-                                    <button type="button" class="btn btn-default btn-sm" id="cancel" data-dismiss="modal">后退</button>
-                                    <button type="button" class="btn btn-primary btn-sm" id="sure" onclick="uv.js_item_add(this)">下一步</button>
+                            <div class="col-xs-10 col-lg-10">
+                                <div class="col-md-offset-2 pl5">
+                                    <button type="button" class="btn btn-default btn-sm" id="cancel">后退</button>
+                                    <button type="button" class="btn btn-primary btn-sm" id="sure" >下一步</button>
                                     @Html.AntiForgeryToken()
                                 </div>
                             </div>
