@@ -47,6 +47,7 @@
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\Module.cs" />
     <Compile Include="Model\ModulePermission.cs" />
+    <Compile Include="Model\Supplier.cs" />
     <Compile Include="Model\Permission.cs" />
     <Compile Include="Model\Project.cs" />
     <Compile Include="Model\Role.cs" />
