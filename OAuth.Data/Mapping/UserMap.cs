@@ -23,7 +23,6 @@ namespace OAuth.Data.Mapping
             Property(t => t.LastLogonDate).HasColumnName("LastAccess_datetime");
             Property(t => t.DigitalCertificate).HasColumnName("DigitalCertificate_nvarchar");
 
-            Property(t => t.UserFlag).HasColumnName("UserFlag_tinyint");
             Property(t => t.Email).HasColumnName("Email_nvarchar");
 
 

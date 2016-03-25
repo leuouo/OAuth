@@ -13,8 +13,6 @@ namespace OAuth.Service.ModelDto
 
         public string Email { get; set; }
 
-        public UserFlag UserFlag { get; set; }
-
         public string PhoneNumber { get; set; }
 
         public string DigitalCertificate { get; set; }

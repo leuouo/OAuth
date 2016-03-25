@@ -166,7 +166,7 @@ a.color_text_lightgray:visited
 .m_10{margin:10px;}
 .w600{width:600px;}
 
-a{text-decoration:none;color:#92a0a9;}
+a{text-decoration:none;}
 a:link{outline:0 none;color:#92a0a9;}
 a:hover,a:focus{text-decoration:none;}
 li{list-style-type:none;}
@@ -482,7 +482,7 @@ div.frame .frame-header {padding:0 15px 14px 2px;}
 div.frame .frame-header .title-breadcrumb{font-size:15px;line-height:21px;}
 div.frame .frame-header a:hover{color:#da4f4a;}
 div.frame .frame-body{padding:0;}
-div.frame .frame-body .line-item-container{}
+div.frame .frame-body .line-item-container{ white-space: nowrap;position: relative;}
 .item-style{position:relative;border-bottom:solid 1px #e1e1e5;background:#fff;min-height:46px;padding-bottom:2px;line-height:20px;cursor:pointer;}
 .item-style .entry-item-main{position:relative;padding:11px 0 3px 0;}
 .item-style .entry-item-main a.entry-item-title{display:block;word-wrap:break-word;white-space:normal;line-height:21px;color:#262c3e;margin:0 5px 0 5px;}
@@ -519,4 +519,3 @@ div.frame .frame-body .line-item-container{}
 
 .ui-step li i{ font-style: normal;font-weight: 700;color:#fff; padding:5px 9px;margin-right:5px; background-color:#d3d3d3;}
 .ui-step li.active i{background-color:#368ee0;}
-

@@ -9,6 +9,7 @@ namespace OAuth.Service.Common
         public static void Initialize()
         {
             Mapper.CreateMap<User, UserDto>();
+            Mapper.CreateMap<Supplier, SupplierDto>();
         }
     }
 }

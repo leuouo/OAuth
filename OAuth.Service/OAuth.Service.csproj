@@ -73,8 +73,10 @@
     <Compile Include="Interfaces\IPermissionService.cs" />
     <Compile Include="Interfaces\IProjectService.cs" />
     <Compile Include="Interfaces\IRoleService.cs" />
+    <Compile Include="Interfaces\ISupplierService.cs" />
     <Compile Include="ItemService.cs" />
     <Compile Include="ModelDto\RoleRightDto.cs" />
+    <Compile Include="ModelDto\SupplierDto.cs" />
     <Compile Include="ModelDto\UserDto.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="ModuleService.cs" />
@@ -85,6 +87,7 @@
     <Compile Include="ResultModel.cs" />
     <Compile Include="RoleService.cs" />
     <Compile Include="Common\ServiceModule.cs" />
+    <Compile Include="SupplierService.cs" />
     <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>

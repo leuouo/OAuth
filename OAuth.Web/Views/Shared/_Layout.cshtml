@@ -64,9 +64,9 @@
             <div class="col-sm-3 col-md-2 left-menu">
                 <ul class="nav nav-sidebar">
                     <li class="active"><a href="/Project"><i class="icon icon-cascades"></i>项目</a></li>
-                    <li><a href="/User"><i class="icon icon-profile"></i>用户</a></li>
-                    <li><a href="/Subject/Supplier"><i class="icon icon-list"></i>供应商管理</a></li>
-
+                    <li><a href="/User"><i class="icon icon-profile"></i>用户管理</a></li>
+                    <li><a href="/Subject/Step2_1"><i class="icon icon-profile"></i>型材询价单</a></li>
+                    <li><a href="/Supplier"><i class="icon icon-list"></i>供应商管理</a></li>
                 </ul>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
@@ -91,14 +91,13 @@
     <script src="/assets/js/dialog.js"></script>
     <script src="/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script>
-    
-
+   
     $(function () {
-        $.mCustomScrollbar.defaults.theme = "minimal-dark";
-        $.mCustomScrollbar.defaults.scrollButtons.enable = true;
-        //$.mCustomScrollbar.defaults.axis = "yx";
 
-        $(".line-item-container").mCustomScrollbar({ axis: "x" });
+        if ($(".frame-body>.line-item-container").length > 0) {
+            $(".frame-body>.line-item-container").mCustomScrollbar({ axis: "x", theme: "dark" });
+        }
+
         $("#create_project").on("click", function () {
             $.get("/Project/Add", function (content) {
                 $.dialog({

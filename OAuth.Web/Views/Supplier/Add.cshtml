@@ -1,20 +1,19 @@
 ﻿@{
-    ViewBag.Title = "询价单发布";
+    ViewBag.Title = "新增商管理";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@model PagedList<Supplier>
 <div class="mod-navbar">
     <div class="main-header">
         <div class="title">
             <h3>
                 <a href="javascript:;"><i class="icon icon-list"></i></a>
-                <a href="javascript:;">竞价单发布</a>
+                <a href="javascript:;">新增商管理</a>
             </h3>
         </div>
     </div>
     <div class="sub">
         <div class="sub_toolbar">
-            @*<button class="btn btn-success btn-fancy btn-sm" onclick="uv.js_user_add(this)"><i class="glyphicon glyphicon-plus"></i> 创建用户</button>*@
         </div>
     </div>
 </div>
@@ -22,17 +21,10 @@
     <div class="frame">
         <div class="frame-header">
             <span class="title-breadcrumb">
-                <a href="javascript:;">供应商设置</a>
+                <a href="javascript:;">表单</a>
             </span>
         </div>
         <hr class="m0" />
-        <div class="ui-step-inner">
-            <ol class="ui-step">
-                <li class="active"><i>1</i>步骤一</li>
-                <li><i>2</i>步骤二</li>
-                <li><i>3</i>步骤三</li>
-            </ol>
-        </div>
         <div class="widget widget-mytask">
             <div class="body">
                 <form class="form-horizontal aui" id="add_item_form" action="/Item/Step1" method="post">
@@ -97,8 +89,6 @@
                 </form>
             </div>
         </div>
+
     </div>
 </div>
-@section Script{
-    <script src="~/assets/js/Validform_v5.3.2_min.js"></script>
-}

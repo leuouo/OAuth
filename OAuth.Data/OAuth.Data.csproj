@@ -55,6 +55,7 @@
     <Compile Include="Mapping\ItemMap.cs" />
     <Compile Include="Mapping\ModuleMap.cs" />
     <Compile Include="Mapping\ModulePermissionMap.cs" />
+    <Compile Include="Mapping\SuppliersMap.cs" />
     <Compile Include="Mapping\PermissionMap.cs" />
     <Compile Include="Mapping\ProjectMap.cs" />
     <Compile Include="Mapping\RoleMap.cs" />
@@ -68,9 +69,6 @@
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
