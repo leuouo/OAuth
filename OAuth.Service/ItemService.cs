@@ -37,7 +37,9 @@ namespace OAuth.Service
 
         public Item Get(int id)
         {
-            throw new NotImplementedException();
+            var entity = _repo
+                .GetAll<Item>().Single(u => u.Id == id);
+            return entity;
         }
 
         public IPagedList<Item> GetItems(int pageIndex)

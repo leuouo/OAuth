@@ -19,6 +19,7 @@ namespace OAuth.Service.Common
             builder.RegisterType<RoleService>().As<IRoleService>().InstancePerRequest();
 
             builder.RegisterType<ItemService>().As<IItemService>().InstancePerRequest();
+            builder.RegisterType<ModeService>().As<IModeService>().InstancePerRequest();
             builder.RegisterType<SupplierService>().As<ISupplierService>().InstancePerRequest();
 
 
