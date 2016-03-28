@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "供应商管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList<Supplier>
+<div class="mod-navbar">
+    <div class="main-header">
+        <div class="title">
+            <h3>
+                <a href="javascript:;"><i class="icon icon-list"></i></a>
+                <a href="javascript:;">供应商管理</a>
+            </h3>
+        </div>
+    </div>
+    <div class="sub">
+        <div class="sub_toolbar">
+            <a href="/Supplier/Add" class="btn btn-success btn-fancy btn-sm"><i class="glyphicon glyphicon-plus"></i> 新增供应商</a>
+        </div>
+    </div>
+</div>
+<div class="navigator-results mCustomScrollbar" data-mcs-theme="dark">
+    <div class="frame">
+        <div class="frame-header">
+            <span class="title-breadcrumb">
+                <a href="javascript:;">列表</a>
+            </span>
+        </div>
+        <hr class="m0" />
+        <div class="widget widget-mytask">
+            <div class="frame-body">
+                <div class="line-item-container">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>账户名</th>
+                            <th>供应商名称</th>
+                            <th>经办人</th>
+                            <th>联系人</th>
+                            <th>联系电话</th>
+                            <th>联系手机</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var supplier in Model)
+                        {
+                            <tr>
+                                <th scope="row">@supplier.Id</th>
+                                <td>@supplier.UserName</td>
+                                <td>@supplier.SupplierName</td>
+                                <td>@supplier.HandleName</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@@mdo</td>
+                                <td><a>删除</a></td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                    <div class="text-center">
+                        @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "id", ContainerTagName = "ul", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>", Id = "bootstrappager" })
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
