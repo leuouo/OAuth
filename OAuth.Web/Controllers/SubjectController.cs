@@ -97,7 +97,7 @@ namespace OAuth.Web.Controllers
         public ActionResult GetModeJson()
         {
             StringBuilder build = new StringBuilder(5000);
-            IEnumerable<Mode> list = _modeService.ModeList().ToList();
+            IEnumerable<Mode> list = _modeService.ModeList();
             
             //var lt = list.Where(p => p.ParentID == -1).ToList();
             //int ltCount = lt.Count();
