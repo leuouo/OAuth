@@ -146,6 +146,7 @@
     <Compile Include="BasePages\CustomBasePage.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ModeController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\OAuthAPIController.cs" />
     <Compile Include="Controllers\PermissionController.cs" />
@@ -1358,6 +1359,7 @@
     <Content Include="Views\Subject\Step2_5.cshtml" />
     <Content Include="Views\Supplier\Index.cshtml" />
     <Content Include="Views\Supplier\Add.cshtml" />
+    <Content Include="Views\Mode\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
