@@ -2,7 +2,8 @@
     ViewBag.Title = "询价单发布";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@model Item
+@section Head{<link href="~/assets/bower_components/icheck/skins/minimal/red.css" rel="stylesheet" />}
 <div class="mod-navbar">
     <div class="main-header">
         <div class="title">
@@ -42,22 +43,29 @@
                                 <div class="form-group">
                                     <label class="col-md-4 control-label">工程名称</label>
                                     <div class="col-md-7">
-                                        <input type="text" name="ItemName" class="form-control" datatype="*" />
+                                        <input type="text" name="ItemName" class="form-control" datatype="*" value="@Model.ItemName" />
                                     </div>
                                 </div>
 
                                 <div class="form-group has-feedback">
                                     <label class="col-md-4 control-label">开始日期</label>
                                     <div class="col-md-7">
-                                        <input type="text" class="form-control" id="StartDate" name="StartDate" aria-describedby="inputSuccess1Status" datatype="*">
+                                        <input type="text" class="form-control" id="StartDate" name="StartDate" value="@Model.StartDate.ToString("yyyy-MM-dd")" onFocus="WdatePicker({isShowClear:false,readOnly:true})" aria-describedby="inputSuccess1Status" datatype="*">
                                         <span class="glyphicon glyphicon-calendar form-control-feedback" aria-hidden="true"></span>
                                         <span id="inputSuccess1Status" class="sr-only">(success)</span>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label">备注</label>
+                                    <label class="col-md-4 control-label">物料类型</label>
                                     <div class="col-md-7">
-                                        <input type="text" name="Memo" class="form-control" />
+                                        @*<select id="IM" name="IN" class="form-control">
+                                            <option>型材询价单</option>
+                                            <option>五金询价单</option>
+                                            <option>板材询价单</option>
+                                            <option>管材询价单</option>
+                                            <option>法兰询价单</option>
+                                        </select>*@
+                                        <input type="text" id="mode" name="mode" readonly="readonly"  onclick="locator.openUser(this, {uid:1})" class="form-control" />
                                     </div>
                                 </div>
                             </div>
@@ -77,9 +85,15 @@
                                 <div class="form-group has-feedback">
                                     <label class="col-md-4 control-label">截止日期</label>
                                     <div class="col-md-7">
-                                        <input type="text" class="form-control" id="EndDate" name="EndDate" aria-describedby="inputSuccess2Status" datatype="*">
+                                        <input type="text" class="form-control" id="EndDate" name="EndDate" value="@Model.EndDate.ToString("yyyy-MM-dd")" onFocus="WdatePicker({isShowClear:false,readOnly:true})" aria-describedby="inputSuccess2Status" datatype="*">
                                         <span class="glyphicon glyphicon-calendar form-control-feedback" aria-hidden="true"></span>
                                         <span id="inputSuccess2Status" class="sr-only">(success)</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">备注</label>
+                                    <div class="col-md-7">
+                                        <input type="text" name="Memo" class="form-control" value="@Model.Memo" />
                                     </div>
                                 </div>
                             </div>
@@ -99,6 +113,179 @@
         </div>
     </div>
 </div>
+
+<div class="sidebar right">
+    <div class="sidebar-loading"></div>
+    <div class="sidebar-panel-wrapper">
+        <div class="sidebar-content"></div>
+    </div>
+</div>
+
+<script type="text/x-jquery-tmpl" id="user_detail">
+    <div class="sidebar-panel-header">
+        <a href="javascript:;" class="name">
+            <i class="icon icon-friend"></i>
+            供应商类别
+        </a>
+
+        <ul class="nav nav-pills">
+            <li class="divider"></li>
+            <li>
+                <a href="javascript:;" class="js-close" title="关闭">
+                    <i class="icon icon-close"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="sidebar-panel-body height-nonav">
+        <div class="content mCustomScrollbar">
+            <div class="entry-well-content">
+                <div class="entity-app">
+                    <div class="entity-app-title"><i class="icon icon-cascades"></i> 拥有项目</div>
+                    @*{{each(i,up) UserProjects}}
+                    <li id="user_project_item_${up.Project.Id}">
+                        <a href="javascript:;" class="item-label">${up.Project.Name}</a>
+                        <i class="icon icon-close" title="移除该项目" onclick="uv.js_remove_project(this)" data-project-id="${up.Project.Id}"></i>
+                    </li>
+                    {{/each}}*@
+                    {{each(i,p) Modes}}
+                    <div class="entry-part-content">
+                        <div class="entry-part-title">${p.ModeName}</div>
+                        @*<ul>
+                            {{each(i,r) p.Roles}}
+                            <li class="${$item.check(r.Id)}">
+                                <a href="javascript:;" class="item-label" onclick="uv.js_set_part(this)" data-role-id="${r.Id}">${r.Name}</a>
+                            </li>
+                            {{/each}}
+
+                            {{if Roles.length === 0}}
+                            <li class="no-role">该项目暂无角色</li>
+                            {{/if}}
+                        </ul>*@
+                    </div>
+                    <hr />
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+@*<script type="text/x-jquery-tmpl" id="part_list">
+    {{each(i,p) projects}}
+    <div class="entry-part-content">
+        <div class="entry-part-title">${p.Name}</div>
+        <ul>
+            {{each(i,r) p.Roles}}
+            <li class="${$item.check(r.Id)}">
+                <a href="javascript:;" class="item-label" onclick="uv.js_set_part(this)" data-role-id="${r.Id}">${r.Name}</a>
+            </li>
+            {{/each}}
+
+            {{if Roles.length === 0}}
+            <li class="no-role">该项目暂无角色</li>
+            {{/if}}
+        </ul>
+    </div>
+    <hr />
+    {{/each}}
+</script>*@
+
+@*<script type="text/x-jquery-tmpl" id="user_edit">
+    <form class="user-add-form aui" id="form1" action="" method="post">
+        <fieldset>
+            <div class="form-group">
+                <label class="control-label">Email</label>
+                <input type="text" name="Email" class="form-control" datatype="e" value="${Email}" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">账户名</label>
+                <input type="text" name="UserName" class="form-control" datatype="*" value="${UserName}" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">姓名</label>
+                <input type="text" name="FullName" class="form-control" value="${FullName}" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">电话号码</label>
+                <input type="text" name="PhoneNumber" class="form-control" datatype="m" ignore="ignore" errormsg="请输入正确的手机号码" value="${PhoneNumber}" />
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">是否禁用</label>
+                <div>
+                    <label class="radio-inline">
+                        <input id="rdoStatus1" name="Status" type="radio" {{if Status === 0}} checked {{/if}} value="1"> 是
+                    </label>
+                    <label class="radio-inline">
+                        <input id="rdoStatus2" name="Status" type="radio" {{if Status == 1}} checked {{/if}} value="0"> 否
+                    </label>
+                </div>
+            </div>
+            <div class="form-group text-right">
+                <button type="button" class="btn btn-success btn-sm" id="sure">保存</button>
+                <button type="submit" class="btn btn-default btn-sm" id="cancel">取消</button>
+            </div>
+        </fieldset>
+    </form>
+</script>*@
 @section Script{
     <script src="~/assets/js/Validform_v5.3.2_min.js"></script>
+    <script src="~/assets/widgets/My97DatePicker/WdatePicker.js"></script>
+    <script src="~/assets/bower_components/icheck/icheck.min.js"></script>
+    <script src="~/assets/js/Validform_v5.3.2_min.js"></script>
+    <script src="~/assets/js/jquery.sidebar.js"></script>
+    <script src="~/assets/js/jquery.tmpl.min.js"></script>
+    <script src="~/assets/js/popbox.js"></script>
+    <script src="~/assets/js/item.js"></script>
+    <script src="~/assets/bower_components/icheck/icheck.min.js"></script>
+    @*<script language="javascript">
+        //var that = this;
+        //$(function () {
+        //    $.post("/Project/GetProjectsAndParts", function (data) {
+        //        renderRole(data);
+        //    });
+        //});
+
+        //function renderRole(projects, userRoles) {
+        //    that.$sidebar.find(".entry-well-content").html($("#part_list").tmpl(
+        //       { projects: projects}));
+        //}
+
+        //this.customScrollbar(".content");
+        //this.stopEventBubble();
+    </script>*@
+    @*<script language="javascript" type="text/javascript">
+        $("#mode").focus(function () {
+            $.dialog({
+                lock: true,
+                width: '700px',
+                height: '500px',
+                content: 'http://www.baidu.com'
+            });
+        });
+
+        $(document).ready(function () {
+            $.post("/subject/getmodejson",{suggest:JSON},function(result){
+                alert(result);
+            });
+            $('.selectpicker').selectpicker({
+                'selectedText': 'cat'
+            });
+
+            //$("#mode").on("focus", function () {
+            //    alert("");
+            //    $.get("http://www.baidu.com", function (content) {
+            //        $.dialog({
+            //            content: content,
+            //            width: 800,
+            //            init: function () {
+
+            //            },
+            //            sure: function () { return false; }
+            //        });
+            //    });
+            //});
+        });
+    </script>*@
 }

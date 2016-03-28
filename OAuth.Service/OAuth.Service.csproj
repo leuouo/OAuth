@@ -69,6 +69,7 @@
     <Compile Include="Common\EncryptHelper.cs" />
     <Compile Include="Interfaces\ICacheManager.cs" />
     <Compile Include="Interfaces\IItemService.cs" />
+    <Compile Include="Interfaces\IModeService.cs" />
     <Compile Include="Interfaces\IModuleService.cs" />
     <Compile Include="Interfaces\IPermissionService.cs" />
     <Compile Include="Interfaces\IProjectService.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="ModelDto\SupplierDto.cs" />
     <Compile Include="ModelDto\UserDto.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="ModeService.cs" />
     <Compile Include="ModuleService.cs" />
     <Compile Include="PermissionService.cs" />
     <Compile Include="ProjectService.cs" />
